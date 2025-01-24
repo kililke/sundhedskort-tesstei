@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<!-- saved from url=(0046)http://localhost/sunhedskortet/auth/idkort.php -->
+<html lang="da"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vis ID</title>
+    <link rel="stylesheet" href="./html_files/style.css">
+    <script>
+        let isLastFourVisible = false;
+
+        function toggleCpr() {
+            const lastFourField = document.getElementById("last-four");
+            const button = document.getElementById("cpr-button");
+
+            if (isLastFourVisible) {
+                lastFourField.textContent = '-XXXX'; // Skjul de sidste fire cifre
+                button.textContent = 'VIS CPR';
+            } else {
+                lastFourField.textContent = '8832'; // Vis de sidste fire cifre
+                button.textContent = 'SKJUL CPR';
+            }
+
+            isLastFourVisible = !isLastFourVisible; // Skift tilstand
+        }
+    </script>
+    <style>
+        /* Din eksisterende CSS-stil her... */
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            background-image: url('kortet/background/create-user.png');
+            background-size: cover;
+            background-position: center;
+            overflow: hidden;
+            background-color: rgba(255, 255, 255, 0.8);
+        }
+
+        .login-container {
+            text-align: center;
+            width: 90%;
+            max-width: 400px;
+            margin-top: 50px;
+        }
+
+        .login-container p {
+            position: relative;
+            top: -990px;
+            font-size: 34px;
+            font-weight: bold;
+            color: #000;
+            text-align: left;
+        }
+
+        .action-button {
+            position: absolute;
+            top: -654px;
+            left: 70%;
+            transform: translateX(-50%);
+            font-size: 18px;
+            padding: 5px 13px;
+            background-color: #FCF7DB;
+            color: black;
+            border: 1px solid black;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            font-family: Consolas, monospace;
+        }
+
+        .user-name {
+    font-size: 28px !important; /* Sikrer at størrelsen bliver anvendt */
+    font-weight: normal;
+    color: #333;
+    margin-top: -10px; /* Placer navnet tættere på CPR-nummeret */
+    text-align: left; /* Juster tekstens position */
+    
+}
+
+ .user-address {
+            font-size: 23px  !important; /* Gør teksten mindre for adressen */
+            font-weight: lighter !important; /* Gør vægten lettere */
+            color:rgb(0, 0, 0)  !important; /* Grå farve for adressen */
+            margin-top: 5px; /* Lidt afstand mellem navn og adresse */
+            text-align: left; /* Juster teksten til venstre */
+            font-family: Consolas, monospace;
+        }
+
+.extra-text {
+            font-size: 23px  !important; /* Gør teksten mindre for adressen */
+            font-weight: lighter !important; /* Gør vægten lettere */
+            color:rgb(0, 0, 0)  !important; /* Grå farve for adressen */
+            margin-top: -20px; /* Lidt afstand mellem navn og adresse */
+            text-align: left; /* Juster teksten til venstre */
+            font-family: Consolas, monospace;
+        }
+.extra-text2 {
+            font-size: 18px  !important; /* Gør teksten mindre for adressen */
+            font-weight: bold !important; /* Gør vægten lettere */
+            color:rgb(0, 0, 0)  !important; /* Grå farve for adressen */
+            margin-top: 80px; /* Lidt afstand mellem navn og adresse */
+            text-align: right !important; /* Juster teksten til venstre */
+            font-family: Consolas, monospace;
+        }
+
+.extra-text3 {
+            font-size: 25px  !important; /* Gør teksten mindre for adressen */
+            font-weight: bold !important; /* Gør vægten lettere */
+            color:rgb(0, 0, 0)  !important; /* Grå farve for adressen */
+            margin-top: 45px; /* Lidt afstand mellem navn og adresse */
+            text-align: left !important; /* Juster teksten til venstre */
+            font-family: Consolas, monospace;
+        }
+
+        .doctor-name {
+            font-size: 20px !important;
+            font-weight: lighter !important;
+            color: rgb(0, 0, 0) !important;
+            margin-top: -50px !important;
+            left: 70px !important;
+            max-width: 300px; /* Begræns bredden på teksten */
+        }
+.extra-text4 {
+            font-size: 18px  !important; /* Gør teksten mindre for adressen */
+            font-weight: bold !important; /* Gør vægten lettere */
+            color:rgb(0, 0, 0)  !important; /* Grå farve for adressen */
+            margin-top: -15px !important; /* Lidt afstand mellem navn og adresse */
+            left: 70px !important;
+        }
+
+.extra-text5 {
+            font-size: 22px  !important; /* Gør teksten mindre for adressen */
+            font-weight: bold !important; /* Gør vægten lettere */
+            color:rgb(0, 0, 0)  !important; /* Grå farve for adressen */
+            margin-top: 25px; /* Lidt afstand mellem navn og adresse */
+            text-align: left !important; /* Juster teksten til venstre */
+            font-family: Consolas, monospace;
+        }
+
+        .underline {
+    border-bottom: 2px solid black; /* Tilføjer en sort streg under tallene */
+    padding-bottom: 0px; /* Skaber lidt luft mellem teksten og stregen */
+}
+
+.extra-text6 {
+            font-size: 24px  !important; /* Gør teksten mindre for adressen */
+            font-weight: bold !important; /* Gør vægten lettere */
+            color:rgb(255, 0, 0)  !important; /* Grå farve for adressen */
+            margin-top: -50px; /* Lidt afstand mellem navn og adresse */
+            left: 60px !important;
+            position: relative; /* Sikrer korrekt placering */
+            text-decoration: underline; /* Tilføjer en understregning */
+        }
+
+        .updated-text {
+            font-size: 18px  !important; /* Gør teksten mindre for adressen */
+            font-weight: Lighter !important; /* Gør vægten lettere */
+            color:rgb(0, 0, 0)  !important; /* Grå farve for adressen */
+            margin-top: 125px !important; /* Lidt afstand mellem navn og adresse */
+            left: 60px !important;
+        }
+
+        .updated-text strong {
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+<!-- Baggrundsbillede -->
+<img src="./html_files/IMG_1107.png" class="login" alt="Login Image">
+
+<!-- Vis brugeroplysninger -->
+<div class="login-container">
+            <p><strong></strong> 
+            <span id="cpr-field">040105</span> 
+            <span id="last-four">-8832</span> 
+        </p>
+        <p class="user-name">Asger Lo Gottielbsen</p> <!-- Navnet med separat stil -->
+        <p class="user-address">Islandsbrygge 106 st, tv</p> <!-- Adressen med separat stil -->
+        <p class="extra-text">2300 København S</p> <!-- Ekstra tekst -->
+        <p class="extra-text2">SIKR.GR.1</p> <!-- Ekstra tekst -->
+        <p class="extra-text3">LÆGE</p> <!-- Ekstra tekst -->
+        <p class="doctor-name">Havnestadens Lægehus, Kigurren 8 D, 2300 København S</p> <!-- Lægens navn direkte fra databasen -->
+        <p class="extra-text4">Tlf. <span class="underline">32641856</span></p> <!-- Ekstra tekst -->
+        <p class="extra-text5">AKUT</p> <!-- Ekstra tekst -->
+        <p class="extra-text6">1813</p> <!-- Ekstra tekst -->
+
+        <!-- Ny tekst for Sidst opdateret -->
+        <p class="updated-text"><strong>Sidst opdateret:</strong> 24. January 2025</p>
+    
+    <!-- Knappen på skærmen -->
+    <button id="cpr-button" class="action-button" onclick="toggleCpr()">VIS CPR</button>
+</div>
+
+
+</body></html>
