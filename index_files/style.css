@@ -1,0 +1,60 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column; /* Sørger for vertikal centrering */
+    background-image: url('kortet/background/login.png'); /* Baggrundsbillede */
+    background-size: cover; /* Sørger for at billedet dækker hele baggrunden */
+    background-position: center; /* Centrerer billedet */
+    position: relative; /* For at placere elementer absolut i forhold til body */
+}
+
+/* Lottie-animation centreret i midten */
+dotlottie-player {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Centrerer animationen */
+    width: 300px; /* Justeret størrelse på animationen */
+    height: 50px; /* Justeret størrelse på animationen */
+}
+
+/* Login-container */
+.login-container {
+    position: absolute;
+    text-align: center;
+    top: 980px; /* Justeret for at placere knappen længere ned */
+    width: 100%;
+}
+
+/* Knap i midten */
+.center-button {
+    padding: 20px 60px; /* Øget padding for bredere knap */
+    background-color: #3430DF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    font-weight: 700;
+    cursor: pointer;
+    width: 350px; /* Øget bredde */
+    margin-bottom: 200px; /* Justeret for mere afstand mellem knappen og animationen */
+    display: block; /* Gør knappen til et blokniveau-element */
+    margin-left: auto;
+    margin-right: auto; /* Centrerer knappen */
+}
+
+.center-button:hover {
+    background-color: #3030D4;
+}
+
+.error {
+    color: red;
+    font-size: 1em;
+    margin-top: 10px;
+    font-weight: bolder;
+}
